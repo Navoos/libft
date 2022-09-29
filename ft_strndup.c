@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yakhoudr <yakhoudr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 14:55:30 by yakhoudr          #+#    #+#             */
-/*   Updated: 2022/09/25 21:47:30 by yakhoudr         ###   ########.fr       */
+/*   Created: 2022/09/26 11:06:07 by yakhoudr          #+#    #+#             */
+/*   Updated: 2022/09/26 15:40:01 by yakhoudr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strndup(char *str, int n)
 {
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	char	*ret;
+	int		i;
+
+	ret = (char *)ft_xalloc(n + 1);
+	i = 0;
+	while (str[i] && i < n)
+	{
+		ret[i] = str[i];
+		i += 1;
+	}
+	ret[i] = 0;
+	return (ret);
 }

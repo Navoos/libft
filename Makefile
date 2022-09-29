@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yakhoudr <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: yakhoudr <yakhoudr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/07 16:43:44 by yakhoudr          #+#    #+#              #
-#    Updated: 2021/11/13 18:54:49 by yakhoudr         ###   ########.fr        #
+#    Updated: 2022/09/26 15:31:36 by yakhoudr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	   ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 	   ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 	   ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_calloc.c \
-	   ft_strdup.c
+	   ft_strdup.c ft_strndup.c 
 
 OBJS = $(SRCS:.c=.o)
 
@@ -39,7 +39,7 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 all: $(NAME)
 
 %.o : %.c libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -g $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
